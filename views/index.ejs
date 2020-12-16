@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Office</title>
+</head>
+<body>
+    <h1>Michael Scott Quotes</h1>
+
+    <form action='/quotes' method='POST'>
+        <label name="name">Name:</label>
+        <input type="text" placeholder="name" name="name">
+        <label name="quote">Quote:</label>
+        <input type="text" placeholder="quote" name="quote">
+        <button type="submit">Submit</button>       
+    </form>
+    <h2>Quotes!</h2>
+    <ul class="quotes">
+        <%for(let i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+            <span><%= quotes[i].name %></span>:
+            <span><%= quotes[i].quote %></span>
+        </li>
+        <% } %>
+    </ul>
+
+    <div>
+        <h2>Dwight Schrute invades!</h2>
+        <p>Replace Michael Scott's quote with a Dwight Schrute quote!</p>
+        <button id="update-button">Replace Michael's Quote</button>
+    </div>
+
+    <div>
+        <h2>Remove Dwight!</h2>
+        <p>Delete one Dwight quote!</p>
+        <button id="delete-button">Delete a  Dwight Quote!</button>
+    </div>
+
+    <div id="message"></div>
+    
+    
+    <script src="/main.js"></script>
+</body>
+</html>
